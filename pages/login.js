@@ -23,7 +23,7 @@ const Login = () => {
 
   return (
     <div className={styles.loginContainer}>
-      <h1 className={styles.title}>Othmane Portfolio</h1>
+      <h1 className={styles.title}>Bonjour/Bonsoir</h1>
       <form onSubmit={handleSubmit} className={styles.loginForm}>
         <h2>Connexion</h2>
         <input
@@ -45,7 +45,7 @@ const Login = () => {
         <button type="submit" className={styles.loginButton}>Connexion</button>
       </form>
       <p className={styles.signupPrompt}>
-        Pas encore de compte ? <Link href="/signup">Créer un compte</Link>
+        Vous n'avez pas de compte ? <Link href="/signup">Créer un compte</Link>
       </p>
     </div>
   );

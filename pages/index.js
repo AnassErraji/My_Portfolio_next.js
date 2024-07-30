@@ -14,14 +14,14 @@ function Home() {
           <Row>
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hi There!{" "}
+                Salut à vous!{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
                   👋🏻
                 </span>
               </h1>
 
               <h1 className="heading-name">
-                I&apos;M
+                Je Suis
                 <strong className="main-name"> Erraji Anass</strong>
               </h1>
 
@@ -35,7 +35,8 @@ function Home() {
                 src="/home-ma11in.svg"
                 alt="home pic"
                 className="img-fluid"
-                style={{ maxHeight: "450px" }}
+                style={{ maxHeight: "450px" }
+              }
               />
             </Col>
           </Row>

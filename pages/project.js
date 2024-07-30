@@ -2,11 +2,6 @@ import Particle from "@/components/Particle";
 import ProjectCards from "@/components/ProjectCards";
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-//import ProjectCard from "./ProjectCards";
-//import Particle from "../Particle";
-//import cube from "../../Assets/Projects/cube.png";
-//import hospi from "../../Assets/Projects/hospi.png";
-//import minor from "../../Assets/Projects/minor.png";
 
 function Projects() {
   return (
@@ -14,11 +9,8 @@ function Projects() {
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+        Mes projets  <strong className="purple">récents </strong>
         </h1>
-        <p style={{ color: "white" }}>
-          Here are a few projects I&apos;ve worked on recently.
-        </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCards

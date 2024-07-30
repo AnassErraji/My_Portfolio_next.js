@@ -32,12 +32,12 @@ const Contact = () => {
       lastName.trim() === "" ||
       message.trim() === ""
     ) {
-      setError("Please fill in all required fields.");
+      setError("Touts les champs sont requis, Merci de les remplir pour envoyer le message.");
       return;
     }
 
     if (!emailRegex.test(email)) {
-      setError("Please enter a valid email address.");
+      setError("S'il vous saisie un email valide.");
       return;
     }
 
@@ -55,7 +55,7 @@ const Contact = () => {
     });
 
     // Set success message
-    setSuccess("Thanks for contacting us. We will send you an email soon.");
+    setSuccess("Merci de me contacter. Vous allez recevoir un email bientot.");
   };
 
   return (

@@ -4,17 +4,22 @@ import { useRouter } from 'next/router';
 import '../styles/globals.css';
 import { Provider } from 'react-redux';
 import store from '../features/store';
-import Layout from '../components/Layout';
+import NavBar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <AuthWrapper>
-        <Layout>
+        
+      <NavBar/>
           <Component {...pageProps} />
-        </Layout>
+          
       </AuthWrapper>
+      <Footer/>
     </Provider>
+    
+    
   );
 }
 function AuthWrapper({ children }) {
@@ -25,9 +30,13 @@ function AuthWrapper({ children }) {
     if (!user.isLoggedIn && router.pathname !== '/login' && router.pathname !== '/signup') {
       router.push('/login');
     }
+
   }, [user.isLoggedIn, router]);
 
   return children;
 }
 
-export default MyApp;
+export default App;
+
+
+

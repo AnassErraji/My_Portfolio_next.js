@@ -42,7 +42,6 @@ const MyAboutCard = () => (
     name="Erraji Anass"
     location="Casablanca, Morroco"
     study="La Cité Collégial"
-    job="Ottawa"
     activities={["Football","Voyager","Natation"]}
   />
 );
