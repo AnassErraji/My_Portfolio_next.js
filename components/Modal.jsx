@@ -78,10 +78,10 @@ function ModalCom({
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            Fermer
           </Button>
           <Button variant="primary" onClick={handleSubmitForm}>
-            Save Changes
+            Enregistrer
           </Button>
         </Modal.Footer>
       </Modal>
