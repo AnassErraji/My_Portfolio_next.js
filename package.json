@@ -1,0 +1,29 @@
+{
+  "name": "mehdiportfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "bootstrap": "^5.3.1",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.12",
+    "next": "13.4.12",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.8.0",
+    "react-dom": "18.2.0",
+    "react-github-calendar": "^4.0.1",
+    "react-icons": "^4.10.1",
+    "react-parallax-tilt": "^1.7.155",
+    "react-pdf": "^7.2.0",
+    "react-redux": "^8.1.2",
+    "react-tsparticles": "^2.11.0",
+    "tsparticles": "^2.11.1",
+    "typewriter-effect": "^2.20.1"
+  }
+}
