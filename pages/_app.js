@@ -1,38 +1,33 @@
-import Footer from "@/components/Footer";
-import NavBar from "@/components/Navbar";
-import Pre from "@/components/Pre";
-import ScrollToTop from "@/components/ScrollToTop";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "@/styles/globals.css";
-import { useEffect, useState } from "react";
-import ReduxProvider from "@/components/redux-provider";
-import Head from "next/head";
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
+import '../styles/globals.css';
+import { Provider } from 'react-redux';
+import store from '../features/store';
+import Layout from '../components/Layout';
 
-export default function App({ Component, pageProps }) {
-  const [load, upadateLoad] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      upadateLoad(false);
-    }, 1200);
-
-    return () => clearTimeout(timer);
-  }, []);
+function MyApp({ Component, pageProps }) {
   return (
-    <>
-      <Head>
-        <title>Anass Erraji | Portfolio</title>
-        <link rel="icon" href="/favicon.png" sizes="any" />
-      </Head>
-      <Pre load={load} />
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <NavBar />
-        <ScrollToTop />
-        <ReduxProvider>
+    <Provider store={store}>
+      <AuthWrapper>
+        <Layout>
           <Component {...pageProps} />
-        </ReduxProvider>
-        <Footer />
-      </div>
-    </>
+        </Layout>
+      </AuthWrapper>
+    </Provider>
   );
 }
+function AuthWrapper({ children }) {
+  const router = useRouter();
+  const user = useSelector((state) => state.user);
+
+  useEffect(() => {
+    if (!user.isLoggedIn && router.pathname !== '/login' && router.pathname !== '/signup') {
+      router.push('/login');
+    }
+  }, [user.isLoggedIn, router]);
+
+  return children;
+}
+
+export default MyApp;

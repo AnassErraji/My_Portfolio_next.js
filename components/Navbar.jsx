@@ -82,7 +82,7 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-              <Link href="/testimonials" onClick={() => updateExpanded(false)}>Temoignages 
+              <Link href="/testimonials" onClick={() => updateExpanded(false)}>Liste des Témoignages 
                 <CgFileDocument style={{ marginBottom: "2px" }} /> 
               </Link>
             </Nav.Item>
