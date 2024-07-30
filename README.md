@@ -25,22 +25,18 @@ git clone https://github.com/"votre-nom-utilisateur"/My_Portfolio_next.js.git
 Installez les dépendances nécessaires :
 
 npm install
-
-ou
-yarn install
+# or
+yarn dev
 
 Lancez l'application en mode développement :
 
 npm run dev
-
-ou
+# or
 yarn dev
 
 Accédez à l'application dans votre navigateur à l'adresse http://localhost:3000.
 
-Voir le portfolio en ligne Visitez mon portfolio en ligne à l'adresse : [lien vers votre portfolio hébergé en ligne]
-
-Contact Si vous souhaitez me contacter, n'hésitez pas à le faire via [votre adresse e-mail] ou sur [votre profil LinkedIn]. Je serais ravi d'échanger avec vous !
+Contact Si vous souhaitez me contacter, n'hésitez pas à le faire via "errajianass1@gmail.com" ou sur "https://www.linkedin.com/in/anass-erraji-652b11278/". Je serais ravi d'échanger avec vous !
 
 Merci d'avoir visité mon portfolio ! J'espère que vous apprécierez découvrir mes projets et en savoir plus sur moi en tant que développeur. N'hésitez pas à me laisser vos retours et suggestions.
 
