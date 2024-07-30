@@ -30,9 +30,7 @@ npm install
 yarn dev
 =======
 
-#or
 yarn install
->>>>>>> ba052fc9b584361f60314a4460d07c95446830b7
 
 Lancez l'application en mode développement :
 
@@ -41,9 +39,6 @@ npm run dev
 # or
 =======
 
-#or
-
->>>>>>> ba052fc9b584361f60314a4460d07c95446830b7
 yarn dev
 
 Accédez à l'application dans votre navigateur à l'adresse http://localhost:3000.
