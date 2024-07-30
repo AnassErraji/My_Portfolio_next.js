@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Mehdi | Portfolio</title>
+        <title>Anass Erraji | Portfolio</title>
         <link rel="icon" href="/favicon.png" sizes="any" />
       </Head>
       <Pre load={load} />

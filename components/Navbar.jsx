@@ -7,7 +7,6 @@ import Button from "react-bootstrap/Button";
 //import { Link } from "react-router-dom";
 
 import { CgGitFork, CgMail, CgVoicemail } from "react-icons/cg";
-import { ImBlog } from "react-icons/im";
 import {
   AiFillStar,
   AiOutlineHome,
@@ -18,7 +17,6 @@ import {
 
 import { CgFileDocument } from "react-icons/cg";
 import Link from "next/link";
-import { FaComment, FaCommentAlt } from "react-icons/fa";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -44,9 +42,6 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
-          <img src="/logo.png" className="img-fluid logo" alt="brand" />
-        </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
@@ -61,13 +56,13 @@ function NavBar() {
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
               <Link href="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
+                <AiOutlineHome style={{ marginBottom: "2px" }} /> Acceuil
               </Link>
             </Nav.Item>
 
             <Nav.Item>
               <Link href="/about" onClick={() => updateExpanded(false)}>
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> A propos
               </Link>
             </Nav.Item>
 
@@ -76,37 +71,26 @@ function NavBar() {
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
                 />{" "}
-                Projects
+                Projets
               </Link>
             </Nav.Item>
             <Nav.Item>
-              <Link href="/testimonials" onClick={() => updateExpanded(false)}>
+              <Link href="/AddTestimonial" onClick={() => updateExpanded(false)}>
                 <AiOutlineComment style={{ marginBottom: "2px" }} />{" "}
-                Testimonials
+                Ajouter temoignage
               </Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Link href="/resume" onClick={() => updateExpanded(false)}>
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+              <Link href="/testimonials" onClick={() => updateExpanded(false)}>Temoignages 
+                <CgFileDocument style={{ marginBottom: "2px" }} /> 
               </Link>
             </Nav.Item>
 
             <Nav.Item>
               <Link href="/contact" onClick={() => updateExpanded(false)}>
-                <CgMail style={{ marginBottom: "2px" }} /> Contact
+                <CgMail style={{ marginBottom: "2px" }} /> Contact moi
               </Link>
-            </Nav.Item>
-
-            <Nav.Item className="fork-btn">
-              <Button
-                href="https://github.com/Iblissss"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
-              </Button>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

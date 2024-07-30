@@ -24,10 +24,9 @@ function Projects() {
             <ProjectCards
               imgPath="/Projects/hospi.png"
               isBlog={false}
-              title="Hospi"
-              description="Private Chat Room or Workspace to have real time consultation with Doctors build with react.js, Node,js, and Express. Have features which allows user for messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/Iblissss/Projet-WEBSERVER"
-              demoLink="https://www.hospicorp.com/"
+              title="Calculatrice(IOS)"
+              description="Les calculatrices sont parmi les outils les plus fondamentaux et indispensables dans le domaine de la technologie. Conçue pour offrir une expérience utilisateur intuitive et efficace, notre calculatrice iOS développée en WPF avec C# combine puissance et convivialité."
+              ghLink="https://github.com/AnassErraji/Calculator_IOS"
             />
           </Col>
 
@@ -35,9 +34,9 @@ function Projects() {
             <ProjectCards
               imgPath="/Projects/minor.png"
               isBlog={false}
-              title="The Minor 2D"
-              description="The project I created is a captivating 2D game developed using JavaScript (JS). The game offers an interactive and entertaining experience for players. With attractive graphics and fluid game mechanics, it offers stimulating challenges and levels."
-              ghLink="https://github.com/Iblissss/Minor-2D"
+              title="Gestion Hopital"
+              description="Projet de conception d'une application desktop pour gerer un hopital ,dont les medecins les reservations et les patients avec C# wpf."
+              ghLink="https://github.com/AnassErraji/Gestion_Hopital-WPF-"
             />
           </Col>
 
@@ -45,9 +44,9 @@ function Projects() {
             <ProjectCards
               imgPath="/Projects/cube.png"
               isBlog={false}
-              title="Cube"
-              description="Our project is an online education platform that aims to make learning accessible to all. With interactive courses, high-quality educational materials, and advanced collaboration tools, our platform provides an immersive and engaging learning experience. Students can choose from a variety of courses in different fields, interact with their peers and instructors, and achieve their full potential, regardless of their constraints."
-              ghLink=""
+              title="Restaurant LaCite"
+              description="Explorez une expérience culinaire unique avec Restaurant LaCite. Notre site web est conçu pour vous transporter dans un voyage gastronomique alliant saveurs authentiques, ambiance chaleureuse et service exceptionnel."
+              ghLink="https://github.com/AnassErraji/R-staurant_LaCite"
             />
           </Col>
         </Row>

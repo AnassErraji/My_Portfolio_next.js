@@ -1,102 +1,52 @@
-import ModalCom from "@/components/Modal";
-import Particle from "@/components/Particle";
-import ProjectCards from "@/components/ProjectCards";
-import Testimonial from "@/components/Testimonial";
-import { addTestimonial, editTestimonial } from "@/features/testimonialSlice";
-import React, { useState } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import { FaAd, FaEdit } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState, useEffect } from 'react';
 
-function Testimonials() {
-  const [show, setShow] = useState(false);
-  const [isEdit, setIsEdit] = useState(false);
-  const [error, setError] = useState("");
-  const [formData, setFormData] = useState({
-    id: "",
-    name: "",
-    job: "",
-    text: "",
-  });
-  console.log(
-    "🚀 ~ file: testimonials.js:21 ~ Testimonials ~ formData:",
-    formData
-  );
+const Testimonials = () => {
+    const [testimonials, setTestimonials] = useState([]);
 
-  const testimonials = useSelector((state) => state.testimonials.testimonials);
-  const dispatch = useDispatch();
-  const { name, job, text } = formData;
-  const HandleEdit = (t) => {
-    setIsEdit(true);
+    useEffect(() => {
+        // Récupération des témoignages depuis le localStorage
+        const savedTestimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
+        setTestimonials(savedTestimonials);
+    }, []);
 
-    setShow(true);
-    setFormData(t);
-  };
-  const handleClose = () => {
-    setShow(false);
-    setFormData({
-      name: "",
-      job: "",
-      text: "",
-    });
-    setError("");
-    setShow(false);
-    setIsEdit(false);
-  };
-  const handleShow = () => setShow(true);
+    const handleEdit = (index) => {
+        const newName = prompt("Entrez le nouveau nom:", testimonials[index].name);
+        const newTestimonial = prompt("Entrez le nouveau témoignage:", testimonials[index].testimonial);
 
-  const handleSubmit = (e) => {
-    // e.preventDefault();
-
-    if (name?.trim() === "" || job?.trim() === "" || text?.trim() === "") {
-      setError("Please fill all the fields.");
-      return;
-    }
-    console.log(text?.trim());
-    const newTestimonial = {
-      id: formData.id ? formData.id : Date.now(),
-      name: formData.name,
-      job: formData.job,
-      text: formData.text,
+        if (newName && newTestimonial) {
+            const updatedTestimonials = testimonials.map((testimonial, i) => 
+                i === index ? { name: newName, testimonial: newTestimonial } : testimonial
+            );
+            setTestimonials(updatedTestimonials);
+            localStorage.setItem('testimonials', JSON.stringify(updatedTestimonials));
+        }
     };
-    //dispatch(addTestimonial(newTestimonial));
-    isEdit
-      ? dispatch(editTestimonial(newTestimonial))
-      : dispatch(addTestimonial(newTestimonial));
-    handleClose();
-  };
 
-  return (
-    <div className="project-section">
-      <div className=" testimonial-heading">
-        <h1 className="project-heading">Testimonials</h1>
-        <Button
-          variant="primary"
-          style={{ marginLeft: "10px" }}
-          onClick={handleShow}
-        >
-          <FaEdit style={{ marginRight: "5px" }} />
-          Add Testimonial
-        </Button>
-      </div>
-      <section className="home-testimonial container-fluid">
-        <div className="testimonial-list">
-          {testimonials.map((t) => (
-            <Testimonial key={t.id} t={t} HandleEdit={HandleEdit} />
-          ))}
+    const handleDelete = (index) => {
+        const updatedTestimonials = testimonials.filter((_, i) => i !== index);
+        setTestimonials(updatedTestimonials);
+        localStorage.setItem('testimonials', JSON.stringify(updatedTestimonials));
+    };
+
+    return (
+        <div className="testimonials-container">
+            <h1>Liste des témoignages</h1>
+            {testimonials.length > 0 ? (
+                <ul className="testimonials-list">
+                    {testimonials.map((testimonial, index) => (
+                        <li key={index} className="testimonial-item">
+                            <p><strong>Nom:</strong> {testimonial.name}</p>
+                            <p><strong>Témoignage:</strong> {testimonial.testimonial}</p>
+                            <button onClick={() => handleEdit(index)} className="testimonial-btn-edit">Modifier</button>
+                            <button onClick={() => handleDelete(index)} className="testimonial-btn-delete">Supprimer</button>
+                        </li>
+                    ))}
+                </ul>
+            ) : (
+                <p>Aucun témoignage disponible.</p>
+            )}
         </div>
-      </section>
-      <ModalCom
-        show={show}
-        handleClose={handleClose}
-        handleShow={handleShow}
-        formData={formData}
-        setFormData={setFormData}
-        handleSubmit={handleSubmit}
-        error={error}
-      />
-    </div>
-  );
-}
+    );
+};
 
 export default Testimonials;
