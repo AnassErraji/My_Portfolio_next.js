@@ -25,13 +25,25 @@ git clone https://github.com/"votre-nom-utilisateur"/My_Portfolio_next.js.git
 Installez les dépendances nécessaires :
 
 npm install
+<<<<<<< HEAD
 # or
 yarn dev
+=======
+
+#or
+yarn install
+>>>>>>> ba052fc9b584361f60314a4460d07c95446830b7
 
 Lancez l'application en mode développement :
 
 npm run dev
+<<<<<<< HEAD
 # or
+=======
+
+#or
+
+>>>>>>> ba052fc9b584361f60314a4460d07c95446830b7
 yarn dev
 
 Accédez à l'application dans votre navigateur à l'adresse http://localhost:3000.
