@@ -5,12 +5,6 @@ import Techstack from "@/components/Techstack";
 import Toolstack from "@/components/Toolstack";
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-//import Particle from "../Particle";
-//import Github from "./Github";
-//import Techstack from "./Techstack";
-//import Aboutcard from "./AboutCard";
-//import laptopImg from "../../Assets/about.png";
-//import Toolstack from "./Toolstack";
 
 function About() {
   return (
@@ -27,26 +21,26 @@ function About() {
             }}
           >
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-              Know Who <strong className="purple">I&apos;M</strong>
+              Je me <strong className="purple">Présente</strong>
             </h1>
             <AboutCard />
           </Col>
           <Col
             md={5}
-            style={{ paddingTop: "120px", paddingBottom: "50px" }}
+            style={{ paddingTop: "120px", paddingBottom: "50px", marginLeft: "1000px"}}
             className="about-img"
           >
             <img src="/about.png" alt="about" className="img-fluid" />
           </Col>
         </Row>
         <h1 className="project-heading">
-          <strong className="purple">Skillset </strong>
+          <strong className="purple">Mes  </strong> Compétences
         </h1>
 
         <Techstack />
 
         <h1 className="project-heading">
-          <strong className="purple">Tools</strong> I use
+          <strong className="purple">Mon</strong> Envirenement
         </h1>
         <Toolstack />
 

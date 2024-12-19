@@ -2,43 +2,48 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import { ImPointRight } from "react-icons/im";
 
-function AboutCard() {
-  return (
-    <Card className="quote-card-view">
-      <Card.Body>
-        <blockquote className="blockquote mb-0">
-          <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">EL Mehdi Alaoui </span>
-            from <span className="purple"> Rabat, Morroco.</span>
-            <br /> I am a final year student in Computer programing at La Cité
-            Collégial.
-            <br />
-            Additionally, I am currently employed as a software developer at
-            Gatineau.
-            <br />
-            <br />
-            Apart from coding, some other activities that I love to do!
-          </p>
-          <ul>
-            <li className="about-activity">
-              <ImPointRight /> Riding horse
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> Surf
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> Travelling
-            </li>
-          </ul>
+// Sous-composant pour une activité spécifique
+const Activity = ({ activity }) => (
+  <li className="about-activity">
+    <ImPointRight /> {activity}
+  </li>
+);
 
-          <p style={{ color: "rgb(155 126 172)" }}>
-            &quot;Strive to build things that make a difference!&quot;
-          </p>
-          <footer className="blockquote-footer">Mehdi</footer>
-        </blockquote>
-      </Card.Body>
-    </Card>
-  );
-}
+// Composant principal
+const AboutCard = ({ name, location, study, job, activities, quote, author }) => (
+  <Card className="quote-card-view">
+    <Card.Body>
+      <blockquote className="blockquote mb-0">
+        <p style={{ textAlign: "justify" }}>
+        Salut, je suis <span className="purple">{name}</span> du <span className="purple">{location}</span>.
+          <br /> Je suis étudiant en dernière session 
+          en programmation informatique à {study}.
+          <br />
+          <br />
+          A part le codage, j'aime faire d'autres activités!
+        </p>
+        <ul>
+          {activities.map((activity, index) => (
+            <Activity key={index} activity={activity} />
+          ))}
+        </ul>
+        <p style={{ color: "rgb(155 126 172)" }}>
+          &quot;{quote}&quot;
+        </p>
+        <footer className="blockquote-footer">{author}</footer>
+      </blockquote>
+    </Card.Body>
+  </Card>
+);
 
-export default AboutCard;
+// Utilisation du composant avec des props
+const MyAboutCard = () => (
+  <AboutCard
+    name="Erraji Anass"
+    location="Casablanca, Morroco"
+    study="La Cité Collégial"
+    activities={["Football","Voyager","Natation"]}
+  />
+);
+
+export default MyAboutCard;

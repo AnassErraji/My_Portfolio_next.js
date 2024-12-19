@@ -1,8 +1,12 @@
-import { configureStore } from "@reduxjs/toolkit";
-import testimonialSlice from "./testimonialSlice";
-//import counterReducer from "@/features/counter/counterSlice"
-export const store = configureStore({
+import { configureStore } from '@reduxjs/toolkit';
+import userReducer from './userSlice';
+import testimonialReducer from './testimonialSlice';
+
+const store = configureStore({
   reducer: {
-    testimonials: testimonialSlice,
+    user: userReducer,
+    testimonials: testimonialReducer,
   },
 });
+
+export default store;
